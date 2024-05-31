@@ -1,5 +1,19 @@
-const Usuario = require('./Usuario');
-const Comentario = require('./Comentario');
+const {Usuario, usuariosRegistradosEnSitioWeb} = require('./Usuario');
+
+class Comentario {
+    static ultimoId = 0;
+
+    constructor(autor, mensaje) {
+        this.id = Comentario.incrementarId();
+        this.autor = autor; // objeto de tipo Usuario
+        this.mensaje = mensaje;
+    }
+
+    static incrementarId() {
+        this.ultimoId = this.ultimoId + 1;
+        return this.ultimoId;
+    }
+}
 
 class Evento {
     static ultimoId = 0;
@@ -10,8 +24,8 @@ class Evento {
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.ubicacion = ubicacion;
-        this.usuariosRegistrados = []; // arreglo de objetos de tipo Usuario
-        this.comentariosRegistrados = []; // arreglo de objetos de tipo Comentario
+        this.usuariosRegistrados = []; // usuarios registrados en dicho evento
+        this.comentariosRegistrados = [];
     }
 
     static incrementarId() {
@@ -20,13 +34,11 @@ class Evento {
     }
 
     registrarUsuario(usuario) {
-        this.usuariosRegistrados.push(usuario);
+        // verificar si el usuario esta registrado en el sitio web antes de registrarlo en el evento
     }
 
     registrarComentario(comentario) {
-
-        // agregar logica para verificar si el usuario ya existe en dicho evento
-
-        this.comentariosRegistrados.push(comentario);
+        
+        // verificar si el usuario esta registrado en el sitio web antes de comentar
     }
 }
