@@ -1,9 +1,164 @@
-<%- include('templates/head', {title: 'Hackathon Copa', archivoCSS: 'eventos.css'}); %>
+<%- include('templates/head', {title: 'Hackathon Copa', archivoCSS: 'detalle-evento.css'}); %>
 <%- include('templates/sidebar'); %>
 <%- include('templates/topbar', {title: 'Hackathon Copa'}); %>
 
 <div class="event">
+    <!-- Modal 1 -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+        Inscribirse
+    </button>
+  
+    <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="formModalLabel">Hackathon Copa</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formInscribir" action="/evento/:id/usuarios" method="POST">
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="inputNombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="inputNombre" name="inputNombre">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="inputEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="inputEmail" name="inputEmail">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <label for="inputTelefono" class="form-label">Teléfono</label>
+                                <input type="text" class="form-control" id="inputTelefono" name="inputTelefono">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" form="formInscribir" class="btn btn-primary">Inscribirse</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#usersModal">
+        Usuarios Registrados
+    </button>
+  
+    <div class="modal fade" id="usersModal" tabindex="-1" aria-labelledby="usersModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="usersModalLabel">Hackathon Copa</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Telefono</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Gilberto</td>
+                                <td>gemrdev@gmail.com</td>
+                                <td>6823-3384</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Rodolfo</td>
+                                <td>rodolfo@outlook.com</td>
+                                <td>6491-1712</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Jose</td>
+                                <td>josegarcia@yahoo.com</td>
+                                <td>6151-4472</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="event__description">
-        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a felis luctus, consectetur diam efficitur, ultrices enim. Suspendisse suscipit est at tellus ullamcorper, eu imperdiet sem blandit. Integer tincidunt dui vitae felis tristique, eu mollis ante pharetra. Nam laoreet, nunc a lobortis volutpat, lectus ipsum mollis tortor, nec interdum est tellus luctus sem. Pellentesque mollis in dui et cursus. Ut et faucibus nisl. Proin eu dui lacinia, posuere sem nec, ultrices quam. Morbi viverra quis nisl eu molestie.</p>
+
+        <p>Cras sed urna neque. Fusce pulvinar rhoncus quam non sagittis. Nam ac faucibus est. Nullam lobortis purus in ipsum scelerisque efficitur. Mauris consectetur orci posuere porta mollis. Donec non magna vestibulum, efficitur justo vitae, facilisis leo. Aliquam sed ipsum ac purus ultricies lacinia.</p>
+
+        <p>Sed id mauris ut felis vulputate hendrerit sed eget orci. Maecenas porttitor blandit ante a condimentum. Aliquam diam augue, varius nec imperdiet et, efficitur non dolor. Praesent elementum mi a pharetra tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam quis tincidunt augue. Sed in est nec lorem blandit euismod nec at risus. Quisque venenatis faucibus molestie. Suspendisse massa dui, aliquet a erat vestibulum, consectetur tincidunt enim. Suspendisse tincidunt gravida placerat. Nunc mollis, dui vitae tempor ultricies, massa purus porta est, vitae viverra nisi justo eget sem. Maecenas dolor lorem, maximus in felis ut, laoreet aliquet tellus. Aenean condimentum leo posuere metus gravida, a rhoncus nisl semper. Aenean sagittis eu arcu id porttitor. Morbi tincidunt sollicitudin lectus, eget facilisis erat mattis vitae.</p>
+
+        <p>Cras maximus arcu at vulputate porttitor. Curabitur sed ipsum vitae velit placerat lobortis. Quisque faucibus aliquet consequat. Donec a cursus elit. Praesent malesuada ante ac sagittis eleifend. Nunc eget ante a turpis placerat tristique vitae vitae elit. Suspendisse potenti. Pellentesque congue at leo ac fermentum. Integer venenatis, libero id semper congue, ex lacus pellentesque orci, a ultricies lorem massa non eros. Nam lacus ipsum, tempus quis odio eget, posuere blandit eros. Aenean quis suscipit enim. Nullam quis urna sed nisi tincidunt sodales quis quis risus. Pellentesque commodo eros id tellus sodales, nec tincidunt ex interdum.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus convallis eget libero sit amet ultrices. Sed ligula sapien, sollicitudin non turpis ac, malesuada pretium felis. Donec dapibus in massa eu elementum. Pellentesque vel nisi augue. Integer feugiat augue magna, id elementum nibh dapibus in. Vivamus eu mauris non diam gravida dapibus.</p>
+    </div>
+
+    <div class="comment-section">
+        <h3 class="comment-section__title">Comentarios</h3>
+
+        <div class="comment-wrapper">
+            <div class="comment">
+                <svg class="comment__photo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/>
+                </svg>
+                <div class="comment__info">
+                    <div class="comment__author">Jose Garcia</div>
+                    <p class="comment__text">
+                        Great event! I really enjoyed the sessions and learned a lot. Looking forward to the next one.
+                    </p>
+                </div>
+            </div>
+            <div class="comment">
+                <svg class="comment__photo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/>
+                </svg>
+                <div class="comment__info">
+                    <div class="comment__author">Gilberto Molinar</div>
+                    <p class="comment__text">
+                        Great event! I really enjoyed the sessions and learned a lot. Looking forward to the next one.
+                        Great event! I really enjoyed the sessions and learned a lot. Looking forward to the next one.
+                        Great event! I really enjoyed the sessions and learned a lot. Looking forward to the next one.
+                        Great event! I really enjoyed the sessions and learned a lot. Looking forward to the next one.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <form action="">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="inputComentarioNombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="inputComentarioNombre" name="inputComentarioNombre">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="inputComentarioEmail" class="form-label">Email:</label>
+                    <input type="email" class="form-control" id="inputComentarioEmail" name="inputComentarioEmail">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="inputComentarioTexto" class="form-label">Comentario:</label>
+                    <textarea class="form-control" id="inputComentarioTexto" name="inputComentarioTexto" rows="4"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
     </div>
 </div>

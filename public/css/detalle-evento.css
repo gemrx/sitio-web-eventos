@@ -1,0 +1,48 @@
+.event__description {
+    margin-bottom: 60px;
+}
+
+.comment-section {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+
+    .comment-section__title {
+        font-size: 1.17em;
+    }
+}
+
+.comment-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+}
+
+.comment {
+    font-size: 1rem;
+    display: flex;
+    gap: 16px;
+    justify-content: start;
+
+    svg {
+        flex-shrink: 0;
+        height: 40px;
+        width: 40px;
+        fill: var(--foreground);
+    }
+
+    .comment__author {
+        font-size: inherit;
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+
+    .comment__text {
+        font-size: inherit;
+        background-color: #f3f4f6;
+        border-radius: 0.25rem;
+        padding: 12px;
+        margin-bottom: 0;
+    }
+}
