@@ -11,10 +11,26 @@ function getEvento(request, response) {
 }
 
 function postRegistrarComentario(request, response){
-    const id = parseInt(request.params.id);
-
+    const idEvento = parseInt(request.params.id);
+    const evento = eventos.find((elemento) => elemento.id === idEvento);
+    console.log("hola");
+    console.log(request.body)
+}
+function postRegistrarUsuario(request, response){
+    
+    const idEvento = parseInt(request.params.id);
+    const evento = eventos.find((elemento) => elemento.id === idEvento);
+    const nombre = request.body.inputNombre
+    const email = request.body.inputEmail
+    const telefono = request.body.inputTelefono
+    const nuevoUsuario = new Usuario(nombre, email, telefono)
+    evento.registrarUsuario(nuevoUsuario);
+    response.render('detalle-evento', {evento});
+    
 }
 module.exports = {
     getEventos,
-    getEvento
+    getEvento,
+    postRegistrarUsuario,
+    postRegistrarComentario
 };

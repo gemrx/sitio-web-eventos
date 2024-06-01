@@ -18,7 +18,7 @@
                 <div class="modal-body">
 
                     <!-- FORMULARIO PARA REGISTRAR USUARIOS A UN EVENTO -->
-                    <form id="formInscribir" action="/evento/:id/usuarios" method="POST">
+                    <form id="formInscribir" action="/evento/<%= evento.id %>/usuarios" method="POST">
                         <div class="row mb-3">
                             <div class="col-md-12">
                                 <label for="inputNombre" class="form-label">Nombre</label>
@@ -73,24 +73,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Gilberto</td>
-                                <td>gemrdev@gmail.com</td>
-                                <td>6823-3384</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Rodolfo</td>
-                                <td>rodolfo@outlook.com</td>
-                                <td>6491-1712</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Jose</td>
-                                <td>josegarcia@yahoo.com</td>
-                                <td>6151-4472</td>
-                            </tr>
+                            <% evento.usuariosRegistrados.forEach((usuario, index) => { %>
+                                <tr>
+                                    <th scope="row"><%= usuario.id%></th>
+                                    <td><%= usuario.nombre %></td>
+                                    <td><%= usuario.email %></td>
+                                    <td><%= usuario.telefono %></td>
+                                </tr>
+                            <% }); %>
                         </tbody>
                     </table>
                 </div>
@@ -111,36 +101,24 @@
         <div class="comment-wrapper">
 
             <!-- UN COMENTARIO -->
-            <div class="comment">
-                <svg class="comment__photo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/>
-                </svg>
-                <div class="comment__info">
-                    <div class="comment__author">Jose Garcia</div>
-                    <p class="comment__text">
-                        Great event! I really enjoyed the sessions and learned a lot. Looking forward to the next one.
-                    </p>
+            <% evento.comentariosRegistrados.forEach(comentario => { %>
+                <div class="comment">
+                    <svg class="comment__photo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/>
+                    </svg>
+                    <div class="comment__info">
+                        <div class="comment__author"> <%= comentario.autor %> </div>
+                        <p class="comment__text">
+                            <%= comentario.mensaje %>
+                        </p>
+                    </div>
                 </div>
-            </div>
+            <% }); %>
 
-            <!-- OTRO COMENTARIO -->
-            <div class="comment">
-                <svg class="comment__photo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/>
-                </svg>
-                <div class="comment__info">
-                    <div class="comment__author">Gilberto Molinar</div>
-                    <p class="comment__text">
-                        Great event! I really enjoyed the sessions and learned a lot. Looking forward to the next one.
-                        Great event! I really enjoyed the sessions and learned a lot. Looking forward to the next one.
-                        Great event! I really enjoyed the sessions and learned a lot. Looking forward to the next one.
-                        Great event! I really enjoyed the sessions and learned a lot. Looking forward to the next one.
-                    </p>
-                </div>
-            </div>
         </div>
 
-        <form action="">
+
+        <form id="formInscribir" action="/evento/<%= evento.id %>/comentarios" method="POST">
             <div class="row mb-3">
                 <div class="col-md-4">
                     <label for="inputComentarioNombre" class="form-label">Nombre:</label>
