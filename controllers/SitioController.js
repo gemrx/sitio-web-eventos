@@ -1,3 +1,4 @@
+const { text } = require('express');
 const { Usuario, Comentario, Evento, eventos } = require('../models/Evento');
 
 function getEventos(request, response) {
@@ -13,21 +14,27 @@ function getEvento(request, response) {
 function postRegistrarComentario(request, response){
     const idEvento = parseInt(request.params.id);
     const evento = eventos.find((elemento) => elemento.id === idEvento);
-    console.log("hola");
-    console.log(request.body)
+    const autor = request.body.inputComentarioNombre;
+    const email = request.body.inputComentarioEmail;
+    const mensaje = request.body.inputComentarioTexto;
+    const nuevoComentario = new Comentario(autor, email, mensaje);
+    evento.registrarComentario(nuevoComentario);
+    response.render('detalle-evento', {evento});
 }
+
 function postRegistrarUsuario(request, response){
     
     const idEvento = parseInt(request.params.id);
     const evento = eventos.find((elemento) => elemento.id === idEvento);
-    const nombre = request.body.inputNombre
-    const email = request.body.inputEmail
-    const telefono = request.body.inputTelefono
+    const nombre = request.body.inputNombre;
+    const email = request.body.inputEmail;
+    const telefono = request.body.inputTelefono;
     const nuevoUsuario = new Usuario(nombre, email, telefono)
     evento.registrarUsuario(nuevoUsuario);
     response.render('detalle-evento', {evento});
-    
 }
+
+
 module.exports = {
     getEventos,
     getEvento,

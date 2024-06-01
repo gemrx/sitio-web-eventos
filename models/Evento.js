@@ -3,9 +3,10 @@ const Usuario = require('./Usuario');
 class Comentario {
     static ultimoId = 0;
 
-    constructor(autor, mensaje) {
+    constructor(autor, email, mensaje) {
         this.id = Comentario.incrementarId();
         this.autor = autor; // objeto de tipo Usuario
+        this.email = email;
         this.mensaje = mensaje;
     }
 
@@ -48,9 +49,9 @@ const usuario2 = new Usuario("José", "jose@outlook.com", "987654321");
 const usuario3 = new Usuario("Rodolfo", "rodolfo@yahoo.com", "456789123");
 
 // Crear comentarios
-const comentario1 = new Comentario(usuario1.nombre, "¡Excelente evento!");
-const comentario2 = new Comentario(usuario2.nombre, "Me encantó, espero el próximo.");
-const comentario3 = new Comentario(usuario3.nombre, "Buen ambiente y organización.");
+const comentario1 = new Comentario(usuario1.nombre, "gilberto@gmail.com", "¡Excelente evento!");
+const comentario2 = new Comentario(usuario2.nombre, "jose@outlook.com", "Me encantó, espero el próximo.");
+const comentario3 = new Comentario(usuario3.nombre, "rodolfo@yahoo.com", "Buen ambiente y organización.");
 
 // Crear eventos y registrar usuarios y comentarios
 const evento1 = new Evento("Hackathon Copa", "Una competencia donde desarrolladores compiten en diversas categorías tecnológicas.", "2024-06-01", "Ciudad del Saber");
