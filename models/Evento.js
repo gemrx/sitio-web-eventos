@@ -20,7 +20,7 @@ class Evento {
 
     constructor(titlo, descripcion, fecha, ubicacion) {
         this.id = Evento.incrementarId();
-        this.titlo - titlo;
+        this.titlo = titlo;
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.ubicacion = ubicacion;
