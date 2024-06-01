@@ -4,7 +4,7 @@
 
 <div class="event">
     <!-- Modal 1 -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+    <button type="button" class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#formModal">
         Inscribirse
     </button>
   
@@ -21,19 +21,19 @@
                     <form id="formInscribir" action="/evento/<%= evento.id %>/usuarios" method="POST">
                         <div class="row mb-3">
                             <div class="col-md-12">
-                                <label for="inputNombre" class="form-label">Nombre</label>
+                                <label for="inputNombre" class="form-label">Nombre:</label>
                                 <input type="text" class="form-control" id="inputNombre" name="inputNombre">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-12">
-                                <label for="inputEmail" class="form-label">Email</label>
+                                <label for="inputEmail" class="form-label">Email:</label>
                                 <input type="email" class="form-control" id="inputEmail" name="inputEmail">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-12">
-                                <label for="inputTelefono" class="form-label">Teléfono</label>
+                                <label for="inputTelefono" class="form-label">Teléfono:</label>
                                 <input type="text" class="form-control" id="inputTelefono" name="inputTelefono">
                             </div>
                         </div>
@@ -50,7 +50,7 @@
 
     <!-- Modal 2 -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#usersModal">
-        Usuarios Registrados
+        Usuarios Inscritos
     </button>
   
     <div class="modal fade" id="usersModal" tabindex="-1" aria-labelledby="usersModalLabel" aria-hidden="true">
