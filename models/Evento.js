@@ -48,9 +48,9 @@ const usuario2 = new Usuario("María", "maria@example.com", "987654321");
 const usuario3 = new Usuario("Pedro", "pedro@example.com", "456789123");
 
 // Crear comentarios
-const comentario1 = new Comentario(usuario1, "¡Excelente evento!");
-const comentario2 = new Comentario(usuario2, "Me encantó, espero el próximo.");
-const comentario3 = new Comentario(usuario3, "Buen ambiente y organización.");
+const comentario1 = new Comentario(usuario1.nombre, "¡Excelente evento!");
+const comentario2 = new Comentario(usuario2.nombre, "Me encantó, espero el próximo.");
+const comentario3 = new Comentario(usuario3.nombre, "Buen ambiente y organización.");
 
 // Crear eventos y registrar usuarios y comentarios
 const evento1 = new Evento("Evento A", "Descripción del evento A.", "2024-06-01", "Lugar A");
