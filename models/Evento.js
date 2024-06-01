@@ -18,9 +18,9 @@ class Comentario {
 class Evento {
     static ultimoId = 0;
 
-    constructor(titlo, descripcion, fecha, ubicacion) {
+    constructor(titulo, descripcion, fecha, ubicacion) {
         this.id = Evento.incrementarId();
-        this.titlo = titlo;
+        this.titulo = titulo;
         this.descripcion = descripcion;
         this.fecha = fecha;
         this.ubicacion = ubicacion;
@@ -43,9 +43,9 @@ class Evento {
 }
 
 // Crear usuarios
-const usuario1 = new Usuario("Juan", "juan@example.com", "123456789");
-const usuario2 = new Usuario("María", "maria@example.com", "987654321");
-const usuario3 = new Usuario("Pedro", "pedro@example.com", "456789123");
+const usuario1 = new Usuario("Gilberto", "gilberto@gmail.com", "123456789");
+const usuario2 = new Usuario("José", "jose@outlook.com", "987654321");
+const usuario3 = new Usuario("Rodolfo", "rodolfo@yahoo.com", "456789123");
 
 // Crear comentarios
 const comentario1 = new Comentario(usuario1.nombre, "¡Excelente evento!");
@@ -53,7 +53,7 @@ const comentario2 = new Comentario(usuario2.nombre, "Me encantó, espero el pró
 const comentario3 = new Comentario(usuario3.nombre, "Buen ambiente y organización.");
 
 // Crear eventos y registrar usuarios y comentarios
-const evento1 = new Evento("Evento A", "Descripción del evento A.", "2024-06-01", "Lugar A");
+const evento1 = new Evento("Hackathon Copa", "Una competencia donde desarrolladores compiten en diversas categorías tecnológicas.", "2024-06-01", "Ciudad del Saber");
 evento1.registrarUsuario(usuario1);
 evento1.registrarUsuario(usuario2);
 evento1.registrarUsuario(usuario3);
@@ -61,7 +61,7 @@ evento1.registrarComentario(comentario1);
 evento1.registrarComentario(comentario2);
 evento1.registrarComentario(comentario3);
 
-const evento2 = new Evento("Evento B", "Descripción del evento B.", "2024-06-02", "Lugar B");
+const evento2 = new Evento("Tech Summit 2024", "Una cumbre tecnológica con talleres y charlas sobre las últimas tendencias en software y hardware.", "2024-07-15", "Panamá City");
 evento2.registrarUsuario(usuario1);
 evento2.registrarUsuario(usuario2);
 evento2.registrarUsuario(usuario3);
@@ -69,6 +69,16 @@ evento2.registrarComentario(comentario1);
 evento2.registrarComentario(comentario2);
 evento2.registrarComentario(comentario3);
 
-console.log(evento1);
-console.log(evento2);
+const evento3 = new Evento("Desafío IoT", "Un evento para explorar y desarrollar soluciones innovadoras utilizando tecnologías de Internet de las Cosas.", "2024-09-10", "Panamá City");
+evento3.registrarUsuario(usuario1);
+evento3.registrarUsuario(usuario2);
+evento3.registrarUsuario(usuario3);
+evento3.registrarComentario(comentario1);
+evento3.registrarComentario(comentario2);
+evento3.registrarComentario(comentario3);
+
+let eventos = [evento1, evento2, evento3];
+
+module.exports = { Usuario, Comentario, Evento, eventos };
+
 
