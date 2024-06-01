@@ -7,7 +7,10 @@ function getEventos(request, response) {
 function getEvento(request, response) {
     response.render('detalle-evento');
 }
+function postRegistrarComentario(request, response){
+    const id = parseInt(request.params.id);
 
+}
 module.exports = {
     getEventos,
     getEvento

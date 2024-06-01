@@ -1,8 +1,9 @@
 // Importaciones
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencodedS
 require('dotenv').config();
 const path = require('path');
 const express = require('express');
-const bodyParser = require('body-parser');
 const sitioRouter = require('./routes/SitioRouter');
 
 // Variables

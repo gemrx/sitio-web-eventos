@@ -4,5 +4,5 @@ const sitioController = require('../controllers/SitioController');
 
 router.get('/', sitioController.getEventos);
 router.get('/evento', sitioController.getEvento);
-
+router.post('/evento/:id',sitioController.postRegistrarComentario);
 module.exports = router;
