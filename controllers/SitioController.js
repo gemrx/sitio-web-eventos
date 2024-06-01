@@ -7,8 +7,9 @@ function getEventos(request, response) {
 function getEvento(request, response) {
     const id = parseInt(request.params.id);
     const evento = eventos.find((elemento) => elemento.id === id);
-    response.render('detalle-evento',{evento});
+    response.render('detalle-evento', {evento});
 }
+
 function postRegistrarComentario(request, response){
     const id = parseInt(request.params.id);
 
