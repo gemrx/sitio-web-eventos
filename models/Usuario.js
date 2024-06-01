@@ -14,9 +14,4 @@ class Usuario {
     }
 }
 
-let usuariosRegistradosEnSitioWeb = []; // usuarios registrados en el sitio web
-
-module.exports = {
-    Usuario,
-    usuariosRegistradosEnSitioWeb
-};
+module.exports = Usuario;
