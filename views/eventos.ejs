@@ -3,119 +3,33 @@
 <%- include('templates/topbar', {title: 'Eventos'}); %>
 
             <div class="event-card__wrapper">
+                <% eventos.forEach(evento => { %>
                 <div class="event-card">
-                    <a class="event-card__name" href="evento">Hackathon Copa</a>
+                    <a class="event-card__name" href="/detalle-evento/<%= evento.idEvento %>" role="button"><%= evento.idEvento%>. <%= evento.titulo%></a>
                     <p class="event-card__description">
-                        El Hackathon Copa es un evento que reúne a personas creativas y apasionadas por la tecnología para 
-                        colaborar en proyectos innovadores. Los participantes trabajan en equipo, aprenden de expertos y compiten por 
-                        premios mientras exploran nuevas ideas en un ambiente colaborativo y divertido.
+                        <%= evento.descripcion%>
                     </p>
                     <div class="event-card__info">
-                        <div class="event-card__fecha">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                <path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z"></path>
-                            </svg>
-                            Del 15 al 16 de noviembre de 2024
+                        <div>
+                            <div class="event-card__fecha">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z"></path>
+                                </svg>
+                                <%= evento.fecha%>
+                            </div>
+                            <div class="event-card__location">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                                    <path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132v-.001a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 9Z"></path>
+                                </svg>
+                                <%= evento.ubicacion%>
+                            </div>
                         </div>
-                        <div class="event-card__location">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                <path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132v-.001a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 9Z"></path>
-                            </svg>
-                            Ciudad del Saber
-                        </div>
-                        <div class="event-card__button-delete"></div>
+                        
+                            <button class="button-register" type="submit">inscribirse</button>
+                        
                     </div>
                 </div>
-                <div class="event-card">
-                    <a class="event-card__name" href="#">Hackathon Copa</a>
-                    <p class="event-card__description">
-                        El Hackathon Copa es un evento que reúne a personas creativas y apasionadas por la tecnología para 
-                        colaborar en proyectos innovadores.
-                    </p>
-                    <div class="event-card__info">
-                        <div class="event-card__fecha">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                <path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z"></path>
-                            </svg>
-                            Del 15 al 16 de noviembre de 2024
-                        </div>
-                        <div class="event-card__location">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                <path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132v-.001a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 9Z"></path>
-                            </svg>
-                            Ciudad del Saber
-                        </div>
-                        <div class="event-card__button-delete"></div>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <a class="event-card__name" href="#">Hackathon Copa</a>
-                    <p class="event-card__description">
-                        El Hackathon Copa es un evento que reúne a personas creativas y apasionadas por la tecnología para 
-                        colaborar en proyectos innovadores.
-                    </p>
-                    <div class="event-card__info">
-                        <div class="event-card__date">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                <path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z"></path>
-                            </svg>
-                            Del 15 al 16 de noviembre de 2024
-                        </div>
-                        <div class="event-card__location">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                <path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132v-.001a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 9Z"></path>
-                            </svg>
-                            Ciudad del Saber
-                        </div>
-                        <div class="event-card__button-delete"></div>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <a class="event-card__name" href="#">Hackathon Copa</a>
-                    <p class="event-card__description">
-                        El Hackathon Copa es un evento que reúne a personas creativas y apasionadas por la tecnología para 
-                        colaborar en proyectos innovadores. Los participantes trabajan en equipo, aprenden de expertos y compiten por 
-                        premios mientras exploran nuevas ideas en un ambiente colaborativo y divertido.
-                    </p>
-                    <div class="event-card__info">
-                        <div class="event-card__fecha">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                <path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z"></path>
-                            </svg>
-                            Del 15 al 16 de noviembre de 2024
-                        </div>
-                        <div class="event-card__location">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                <path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132v-.001a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 9Z"></path>
-                            </svg>
-                            Ciudad del Saber
-                        </div>
-                        <div class="event-card__button-delete"></div>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <a class="event-card__name" href="#">Hackathon Copa</a>
-                    <p class="event-card__description">
-                        El Hackathon Copa es un evento que reúne a personas creativas y apasionadas por la tecnología para 
-                        colaborar en proyectos innovadores. Los participantes trabajan en equipo, aprenden de expertos y compiten por 
-                        premios mientras exploran nuevas ideas en un ambiente colaborativo y divertido.
-                    </p>
-                    <div class="event-card__info">
-                        <div class="event-card__fecha">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                <path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 13.25 16H2.75A1.75 1.75 0 0 1 1 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 0 1 4.75 0ZM2.5 7.5v6.75c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25V7.5Zm10.75-4H2.75a.25.25 0 0 0-.25.25V6h11V3.75a.25.25 0 0 0-.25-.25Z"></path>
-                            </svg>
-                            Del 15 al 16 de noviembre de 2024
-                        </div>
-                        <div class="event-card__location">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                <path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132v-.001a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 9Z"></path>
-                            </svg>
-                            Ciudad del Saber
-                        </div>
-                        <div class="event-card__button-delete"></div>
-                    </div>
-                </div>
+                <% })%>
             </div>
         </main>
     </div>

@@ -1,9 +1,11 @@
-<%- include('templates/head', {title: 'Hackathon Copa', archivoCSS: 'eventos.css'}); %>
+<%- include('templates/head', {title: evento.titulo, archivoCSS: 'eventos.css'}); %>
 <%- include('templates/sidebar'); %>
-<%- include('templates/topbar', {title: 'Hackathon Copa'}); %>
+<%- include('templates/topbar', {title: evento.titulo}); %>
 
 <div class="event">
     <div class="event__description">
-        
+        <h1>
+            <%= evento.titulo%> 
+        </h1>
     </div>
 </div>

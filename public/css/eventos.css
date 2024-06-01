@@ -36,13 +36,28 @@
 .event-card__info {
     margin-top: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 10px;
 }
 .event-card__date,
-.event-card__location {
+.event-card__location{
     font-weight: 500;
     display: flex;
     gap: 0.5rem;
+    align-items: center;
+}
+
+.button-register{
+    width: auto;
+    height: auto;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4f46e5;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }

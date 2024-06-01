@@ -1,6 +1,6 @@
-const eventos = {
-  kubernetes: {
-    id: 1,
+const eventos = [
+  {
+    idEvento: 1,
     titulo: "Hackathon kubernetes",
     descripcion:
       "Experimenta una competencia con otros desarrolladores y pon a prueba tus habilidades",
@@ -18,8 +18,8 @@ const eventos = {
       },
     },
   },
-  linux: {
-    id: 1,
+  {
+    idEvento: 2,
     titulo: "Hackathon linux",
     descripcion:
       "¿Sabes usar linux? ¡Unete a esta competencia y demuestra tus habilidades!",
@@ -37,8 +37,8 @@ const eventos = {
       },
     },
   },
-  azure: {
-    id: 1,
+  {
+    idEvento: 3,
     titulo: "Hackathon azure",
     descripcion: "Nuevas tendencias, Azure, aprende y compite en la Nube ☁️",
     fecha: "01/06/2025",
@@ -59,6 +59,6 @@ const eventos = {
       },
     },
   },
-};
+];
 
-module.exports = eventos;
+module.exports = { eventos };
