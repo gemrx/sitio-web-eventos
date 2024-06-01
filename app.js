@@ -1,6 +1,4 @@
 // Importaciones
-app.use(express.json()) // for parsing application/json
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencodedS
 require('dotenv').config();
 const path = require('path');
 const express = require('express');
@@ -11,6 +9,8 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 // Configuraciones del servidor
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencodedS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));

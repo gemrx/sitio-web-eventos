@@ -3,6 +3,6 @@ const router = express.Router();
 const sitioController = require('../controllers/SitioController');
 
 router.get('/', sitioController.getEventos);
-router.get('/evento', sitioController.getEvento);
-router.post('/evento/:id',sitioController.postRegistrarComentario);
+router.get('/evento/:id',sitioController.getEvento);
+//router.post('/evento/:id',sitioController.postRegistrarComentario);
 module.exports = router;
